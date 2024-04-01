@@ -5,31 +5,31 @@
   <a href="https://scaffoldeth.io">Website</a>
 </h4>
 
-🧪 An open-source, up-to-date toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+🧪 Набор инструментов для разработки децентрализованных приложений в сети Ethereum. 
+Создан для легкого создания и размещения смарт-контрактов, быстрой разработки UI для взаимодействия с ними. 
 
-⚙️ Built using NextJS, RainbowKit, Hardhat, Wagmi, Viem, and Typescript.
+⚙️ Использует фреймворки NextJS, RainbowKit, Hardhat, Wagmi, and Typescript.
 
-- ✅ **Contract Hot Reload**: Your frontend auto-adapts to your smart contract as you edit it.
-- 🪝 **[Custom hooks](https://docs.scaffoldeth.io/hooks/)**: Collection of React hooks wrapper around [wagmi](https://wagmi.sh/) to simplify interactions with smart contracts with typescript autocompletion.
-- 🧱 [**Components**](https://docs.scaffoldeth.io/components/): Collection of common web3 components to quickly build your frontend.
-- 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- ✅ **Горячая перезагрузка контракта**: Фронтенд приложения автоматически реагирует на изменения в исходном коде смарт-контракта.
+- 🪝 **[Хуки](https://docs.scaffoldeth.io/hooks/)**: Коллекция оберток вокруг React хуков [wagmi](https://wagmi.sh/) упрощает взаимодействие с контрактами. 
+- 🧱 [**Компоненты**](https://docs.scaffoldeth.io/components/): Коллекция основных фронтенд компонентов для взаимодействия с Web3.  
+- 🔥 **Burner Wallet & Local Faucet**: Тестируйте свои приложения с локальным источником криптовалюты. 
+- 🔐 **Интеграция с провайдерами Web3**: Подключение основных провайдеров для доступа к сети Ethereum. 
 
-![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/b237af0c-5027-4849-a5c1-2e31495cccb1)
+
+![Debug Contracts tab](https://github.com/scaffold-eth/scaffold-eth-2/assets/55535804/1171422a-0ce4-4203-bcd4-d2d1941d198b)
 
 ## Requirements
 
-Before you begin, you need to install the following tools:
-
-- [Node (>= v18.17)](https://nodejs.org/en/download/)
+- [Node (v18 LTS)](https://nodejs.org/en/download/)
 - Yarn ([v1](https://classic.yarnpkg.com/en/docs/install/) or [v2+](https://yarnpkg.com/getting-started/install))
 - [Git](https://git-scm.com/downloads)
 
-## Quickstart
+## Начало работы
 
-To get started with Scaffold-ETH 2, follow the steps below:
+Для создания шаблонного приложения Scaffold-ETH 2, выполните следующие шаги:
 
-1. Clone this repo & install dependencies
+1. Клонируйте репозиторий и установите зависимости
 
 ```
 git clone https://github.com/scaffold-eth/scaffold-eth-2.git
@@ -37,41 +37,45 @@ cd scaffold-eth-2
 yarn install
 ```
 
-2. Run a local network in the first terminal:
+2. В первом терминале запустите локальную Web3 сеть 
 
 ```
 yarn chain
 ```
+Эта команда запускает сеть Ethereum на локальной машине с помощью Hardhat для быстрой разработки и тестирования. 
+Настройка параметров сети доступна в файле `hardhat.config.ts`.
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.ts`.
-
-3. On a second terminal, deploy the test contract:
+3. Во втором терминале разместите и протестируйте смарт-контракт:
 
 ```
 yarn deploy
 ```
 
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
+Исходный код контракта расположен в папке `packages/hardhat/contracts`, его можно модифицировать для своего приложения. 
+Команда `yarn deploy` размещает смарт-контракт в локальной сети, в папке `packages/hardhat/deploy`.
+Скрипт для деплоя тоже можно кастомизировать. 
 
-4. On a third terminal, start your NextJS app:
+4. В третьем терминале запустите фронтенд-приложение NextJS:
 
 ```
 yarn start
 ```
 
-Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the `Debug Contracts` page. You can tweak the app config in `packages/nextjs/scaffold.config.ts`.
+Перейдите по ссылке: `http://localhost:3000`. 
+Взаимодействие со смарт-контрактом доступно на странице `Debug Contracts`. 
+Настройки приложения доступны в файле `packages/nextjs/scaffold.config.ts`.
 
-Run smart contract test with `yarn hardhat:test`
+## Тестирование 
 
-- Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
-- Edit your frontend in `packages/nextjs/pages`
-- Edit your deployment scripts in `packages/hardhat/deploy`
+Запуск тестов для смарт-контракта командой `yarn hardhat:test`
+Рекомендуется запускать тесты после каждого изменения
+- исходного кода смарт-контракта `YourContract.sol` in `packages/hardhat/contracts`
+- компонентов фронтенда `packages/nextjs/pages`
+- настроек размещения скрипта в папке `packages/hardhat/deploy`
 
-## Documentation
+## Документация
 
-Visit our [docs](https://docs.scaffoldeth.io) to learn how to start building with Scaffold-ETH 2.
-
-To know more about its features, check out our [website](https://scaffoldeth.io).
+Для подробного изучения компонентов Scaffold-ETH-2 обязательно посетите страницы [documentations](https://docs.scaffoldeth.io) и [website](https://scaffoldeth.io).
 
 ## Contributing to Scaffold-ETH 2
 
