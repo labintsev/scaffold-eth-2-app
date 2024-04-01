@@ -32,8 +32,8 @@
 1. Клонируйте репозиторий и установите зависимости
 
 ```
-git clone https://github.com/scaffold-eth/scaffold-eth-2.git
-cd scaffold-eth-2
+git clone https://github.com/labintsev/scaffold-eth-2-app.git
+cd scaffold-eth-2-app
 yarn install
 ```
 
